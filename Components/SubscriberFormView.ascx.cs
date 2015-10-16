@@ -5,7 +5,8 @@ using MvpExample.Service;
 namespace MvpExample.Components
 {
     /// <summary>
-    /// Key here is that the user control is implementing the interface that we are using as the contract to define our view. 
+    /// Key here is that the user control is implementing the interface that we are using as the contract to define our view, which 
+    /// the presenter will interact with.
     /// </summary>
     public partial class SubscriberFormView : System.Web.UI.UserControl, ISubscriberFormView
     {
