@@ -24,7 +24,12 @@ namespace MvpExample.Components
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            // This is using our IoC container to create our presenter (and its dependencies) for us
             _presenter = ServiceLocator.Get<ISubscriberFormView, SubscriberFormPresenter>(this);
+
+            // Alternative to using IoC container, we would end up creating our own presenter factory
+            // but ultimately would end up having to manually new up all our dependencies
+            //_presenter = new SubscriberFormPresenter(this, new SubscriberService(new SubscriberRepository()));
         }
 
         protected void SubmitSubscriber_Click(object sender, EventArgs e)
